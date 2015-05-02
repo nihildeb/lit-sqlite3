@@ -1,6 +1,6 @@
 return {
   name = "nihildeb/sqlite3",
-  version = "0.0.1",
+  version = "0.0.2",
   homepage = "https://github.com/nihildeb/lit-sqlite3",
   dependencies = {
     "creationix/ffi-loader@1.0.0"
