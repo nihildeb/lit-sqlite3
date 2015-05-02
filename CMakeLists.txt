@@ -97,5 +97,5 @@ endif()
 message("Installing shared lib to: ${INSTALL_DIR}")
 
 install(TARGETS ${SQLITE_DYN_NAME} LIBRARY DESTINATION "${INSTALL_DIR}")
-install(FILES $HDR_FILES DESTINATION "${INSTALL_DIR}")
+install(FILES ${HDR_FILES} DESTINATION "${INSTALL_DIR}")
 
