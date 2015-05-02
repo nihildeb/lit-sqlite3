@@ -1,1 +1,1 @@
-return require('ffi-loader')(module.dir, 'sqlite.h')
+return require('lsqlite3')
