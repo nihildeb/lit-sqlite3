@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 set(PROJECT_NAME sqlite)
-set(SQLITE_SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/sqlite-src)
+set(SQLITE_SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 project(${PROJECT_NAME} C)
 
 message("Building on: ${CMAKE_SYSTEM_NAME}")
