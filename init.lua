@@ -1,9 +1,21 @@
 local ffi = require "ffi"
 local bit = require "bit"
 
-local lib = require('ffi-loader')(module.dir, "sqlite3.h")
+local sqlite3 = nil
+--------------------------------------------------------------------------------
+local so_names = {
+    ['Linux-x64'] = 'libsqlite3.so',
+    ['OSX-x64'] = 'libsqlite3.dylib',
+}
 
-local sqlite3 = ffi.load("sqlite3")
+ffi.cdef( module:load('sqlite3.h') )
+local arch = ffi.os .. '-' .. ffi.arch
+module:action( arch .. '/' .. so_names[arch], function(path)
+    sqlite3 = ffi.load( path )
+end)
+
+--local sqlite3 = ffi.load("sqlite3")
+
 local new_db_ptr = ffi.typeof("sqlite3*[1]")
 local new_stmt_ptr = ffi.typeof("sqlite3_stmt*[1]")
 --local new_exec_ptr = ffi.typeof("int (*)(void*,int,char**,char**)")
